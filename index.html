@@ -48,11 +48,6 @@
 	      <h2>First Panel</h2>
 	      <p class="white-text">This is your first panel</p>
     </div>
-    <div class="carousel-item amber white-text" href="#two!">
-
-      <h2>Second Panel</h2>
-      <p class="white-text">This is your second panel</p>
-    </div>
     <div class="carousel-item green white-text" href="#three!">
           <img class="responsive-img" style="height:60vh;" src="img/roll1.jpg">
       <h2>Third Panel</h2>
@@ -64,20 +59,14 @@
       <p class="white-text">This is your fourth panel</p>
     </div>
   </div>
-
-
   <div class="container">
     <div class="section">
-
       <div class="row">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           	<img class="responsive-img" width="100%" src="img/luminoso.jpg">
       </div>
-
     </div>
   </div>
-
-
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
@@ -89,8 +78,6 @@
         <div class="row center">
           <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
         </div>
-        <br><br>
-
       </div>
     </div>
     <div class="parallax"><img src="img/polloasado.jpg" width="100%" alt="Unsplashed background img 1"></div>
@@ -121,34 +108,35 @@
               <div class="col s12">
                   <div class="card-panel">
                     <div class="row">
-                      <form class="col s6">
+                      <div class="col s6">
                       <h4 class="header2">Contactanos</h4>
+                      <p id="returnmessage"></p>
                         <div class="row">
                           <div class="input-field col s12">
-                            <input placeholder="Jorge Gonzalez" id="name2" type="text" class="validate" required>
+                            <input placeholder="Jorge Gonzalez" id="name" type="text" class="validate" required>
                             <label for="first_name">Nombre</label>
                           </div>
                         </div>
                         <div class="row">
                           <div class="input-field col s12">
-                            <input placeholder="jgonzalez@dominio.com" id="email2" type="email" class="validate" required>
+                            <input placeholder="jgonzalez@dominio.com" id="email" type="email" class="validate" required>
                             <label for="email">Correo</label>
                           </div>
                         </div>
                         <div class="row">
                           <div class="input-field col s12">
-                            <textarea placeholder="Mensaje" id="message2" class="materialize-textarea validate" required></textarea>
+                            <textarea placeholder="Mensaje" id="message" class="materialize-textarea validate" required></textarea>
                             <label for="message">Mensaje</label>
                           </div>
                           <div class="row">
                             <div class="input-field col s12">
-                              <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                              <button class="btn cyan waves-effect waves-light right" id="submit" name="action">Submit
                                 <i class="mdi-content-send right"></i>
                               </button>
                             </div>
                           </div>
                         </div>
-                      </form>
+                      </div>
                       <div class="col s6">
                       <h4 class="header2">Encuentranos</h4>
                          <style>
@@ -329,4 +317,30 @@ $("#botoncontacto").click(function() {
         scrollTop: $("#contactanos").offset().top},
         'slow');
 });
+</script>
+<script>
+$(document).ready(function() {
+	$("#submit").click(function() {
+		var name = $("#name").val();
+		var email = $("#email").val();
+		var message = $("#message").val();
+		$("#returnmessage").empty(); // To empty previous error/success message.
+		// Checking for blank fields.
+		if (name == '' || email == '') {
+			alert("Please Fill Required Fields");
+		} else {
+			// Returns successful data submission message when the entered information is stored in database.
+			$.post("contact_form.php", {
+				name1: name,
+				email1: email,
+				message1: message,
+			}, function(data) {
+				$("#returnmessage").append(data); // Append returned message to message paragraph.
+				if (data == "Tu mensaje se ha recivido, Te contactaremos pronto.") {
+					$("#form")[0].reset(); // To reset form fields on success.
+				}
+			});
+		}
+	});
+	});
 </script>

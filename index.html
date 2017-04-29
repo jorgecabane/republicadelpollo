@@ -18,10 +18,10 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo center"><img style="max-width:20%" class="responsive-img" id="logo" src="img/logo.jpg"/></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="white-text" href="#">Menú</a></li>
-        <li><a class="white-text" href="#">Encuentranos</a></li>
-        <li><a class="white-text" href="#">¿Quiénes Somos?</a></li>
-        <li><a class="white-text" href="#">Contacto</a></li>
+        <li><a class="white-text" id="botonmenu"href="#">Menú</a></li>
+        <li><a class="white-text" id="botonencuentranos">Encuentranos</a></li>
+        <li><a class="white-text" id="botonquienessomos">¿Quiénes Somos?</a></li>
+        <li><a class="white-text" id="botoncontacto">Contacto</a></li>
       </ul>
       <ul class="left hide-on-med-and-down">
         <li><a class="white-text" href="tel:+56978486568"><i class="left material-icons">phone</i>+56978486568</a></li>
@@ -43,7 +43,7 @@
     <div class="carousel-fixed-item center">
       <a class="btn waves-effect white-text darken-text-2 z-depth-5">Haz tu pedido!</a>
     </div>
-    <div class="carousel-item red white-text" href="#one!">
+    <div class="carousel-item red white-text" id="menu">
 		<img class="responsive-img" style="height:60vh;" src="img/menú.jpg">
 	      <h2>First Panel</h2>
 	      <p class="white-text">This is your first panel</p>
@@ -116,16 +116,76 @@
     <div class="parallax"><img src="img/papasfritas.jpg" width="100%" alt="Unsplashed background img 2"></div>
   </div>
 
-  <div class="container">
+  <div id="contactanos" class="container">
     <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
+              <div class="col s12">
+                  <div class="card-panel">
+                    <div class="row">
+                      <form class="col s6">
+                      <h4 class="header2">Contactanos</h4>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input placeholder="Jorge Gonzalez" id="name2" type="text" class="validate" required>
+                            <label for="first_name">Nombre</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input placeholder="jgonzalez@dominio.com" id="email2" type="email" class="validate" required>
+                            <label for="email">Correo</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <textarea placeholder="Mensaje" id="message2" class="materialize-textarea validate" required></textarea>
+                            <label for="message">Mensaje</label>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                                <i class="mdi-content-send right"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <div class="col s6">
+                      <h4 class="header2">Encuentranos</h4>
+                         <style>
+					      #map {
+					        height: 400px;
+					        width: 100%;
+					       }
+					    </style>
+					    <div id="map"></div>
+					    <script>
+					      function initMap() {
+					        var uluru = {lat:-33.373449, lng:-70.518250};
+					        var map = new google.maps.Map(document.getElementById('map'), {
+					          zoom: 18,
+					          center: uluru
+					        });
+					        var contentString = '<p><b>Republica del Pollo</b>&nbsp;<img class="responsive-img" style="width:40px" src="img/logo.jpg"><br>Nva Las Condes 12280, Local 104, Las Condes</p>';
+					        var infowindow = new google.maps.InfoWindow({
+					            content: contentString
+					          });
+					        var marker = new google.maps.Marker({
+					            position: uluru,
+					            map: map,
+					            title: 'Uluru (Ayers Rock)'
+					          });
+					          marker.addListener('click', function() {
+					            infowindow.open(map, marker);
+					          });
+					      }
+					    </script>
+					    <script async defer
+					    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBRC9ggQZEiyJT2tQAsPAP4lIHxe-ft6Y&callback=initMap">
+					    </script>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
 
     </div>
   </div>
@@ -256,5 +316,17 @@ $(document).ready(function(){
 		return false;
 	});
 	
+});
+</script>
+<script>
+$("#botonmenu").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#menu").offset().top},
+        'slow');
+});
+$("#botoncontacto").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#contactanos").offset().top},
+        'slow');
 });
 </script>

@@ -6,21 +6,27 @@
   <title>República del Pollo</title>
 
   <!-- CSS  -->
-  <link rel="icon" href="img/favicon.ico" type="image" sizes="16x16">
+  <link rel="icon" href="img/polloicono.png" type="image">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
 
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+
+<!-- Menú --> 
 <div class="navbar-fixed">
-  <nav class="" role="navigation" style="background: rgba(0, 0, 0, 1)">
+  <nav class="menuopacity" role="navigation" style="background: rgba(0, 0, 0, 1)">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo center"><img style="max-width:20%" class="responsive-img" id="logo" src="img/logo.jpg"/></a>
+      <a id="logo-container" href="#" class="brand-logo center"><img style="max-width:20%" class="responsive-img" id="logo" src="img/logo.png"/></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="white-text" id="botonmenu"href="#">Menú</a></li>
-        <li><a class="white-text" id="botonencuentranos">Encuentranos</a></li>
         <li><a class="white-text" id="botonquienessomos">¿Quiénes Somos?</a></li>
+        <li><a class="white-text" id="botonencuentranos">Encuéntranos</a></li>
         <li><a class="white-text" id="botoncontacto">Contacto</a></li>
       </ul>
       <ul class="left hide-on-med-and-down">
@@ -35,13 +41,16 @@
     </div>
   </nav>
 </div>
-  <div class="progress" style=" margin:0px;outline:none; vertical-align: top; height:6px">
-      <div class="determinate grey" style="width: 0%"></div>
-  </div>
-        
-  <div class="carousel carousel-slider center" data-indicators="true">
+
+<!-- Loading bar --> 
+<div class="progress" style=" margin:0px;outline:none; vertical-align: top; height:6px">
+    <div class="determinate grey" style="width: 0%"></div>
+</div>
+
+<!-- Carousel -->        
+<div class="carousel carousel-slider center z-depth-1" data-indicators="true" style="height: 60vh !important;">
     <div class="carousel-fixed-item center">
-      <a class="btn waves-effect white-text darken-text-2 z-depth-5">Haz tu pedido!</a>
+      <a class="btn black waves-effect white-text darken-text-2 z-depth-4">Haz tu pedido!</a>
     </div>
     <div class="carousel-item red white-text" id="menu">
 		<img class="responsive-img" style="height:60vh;" src="img/menú.jpg">
@@ -59,139 +68,111 @@
       <p class="white-text">This is your fourth panel</p>
     </div>
   </div>
-  <div class="container">
-    <div class="section">
-      <div class="row">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          	<img class="responsive-img" width="100%" src="img/luminoso.jpg">
+
+<!-- Banner logo --> 
+<div class="container valign-wrapper" style="height: 29vh ">
+  <div class="section">
+   	<img class="responsive-img z-depth-5" width="100%" src="img/luminoso.jpg">
+  </div>
+</div>
+
+<!-- Banner imagen --> 
+<div id="index-banner" class="parallax-container z-depth-1">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+      </div>
+      <div class="row center">
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
       </div>
     </div>
   </div>
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-        </div>
+  <div class="parallax"><img src="img/polloasado.jpg" width="100%" alt="Unsplashed background img 1"></div>
+</div>
+
+<!-- Historia--> 
+<div id="aboutus" class="container">
+  <div class="section center">
+	<img class="z-depth-5" src="historia.jpg" width="85%">
+  </div>
+</div>
+
+<!-- Banner imagen --> 
+<div class="parallax-container valign-wrapper z-depth-1">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+      	<h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
       </div>
     </div>
-    <div class="parallax"><img src="img/polloasado.jpg" width="100%" alt="Unsplashed background img 1"></div>
   </div>
+  <div class="parallax"><img src="img/papasfritas.jpg" width="100%" alt="Unsplashed background img 2"></div>
+</div>
 
-
-  <div class="container">
-    <div class="section center ">
-    <h3>Nuestra historia</h3>
-		<img class="z-depth-3" src="historia.jpg" width="85%">
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="img/papasfritas.jpg" width="100%" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div id="contactanos" class="container">
-    <div class="section">
-              <div class="col s12">
-                  <div class="card-panel">
-                    <div class="row">
-                      <div class="col s6">
-                      <h4 class="header2">Contactanos</h4>
-                      <p id="returnmessage"></p>
-                        <div class="row">
-                          <div class="input-field col s12">
-                            <input placeholder="Jorge Gonzalez" id="name" type="text" class="validate" required>
-                            <label for="first_name">Nombre</label>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="input-field col s12">
-                            <input placeholder="jgonzalez@dominio.com" id="email" type="email" class="validate" required>
-                            <label for="email">Correo</label>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="input-field col s12">
-                            <textarea placeholder="Mensaje" id="message" class="materialize-textarea validate" required></textarea>
-                            <label for="message">Mensaje</label>
-                          </div>
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <button class="btn cyan waves-effect waves-light right" id="submit" name="action">Submit
-                                <i class="mdi-content-send right"></i>
-                              </button>
-                            </div>
-                          </div>
+<!-- Contacto --> 
+<div id="contactanos" class="container">
+  <div class="section">
+            <div class="col s12">
+                <div class="">
+                  <div class="row  z-depth-5">
+                    <div class="col s6">
+                    	<h4 class="header2 center">Contáctanos</h4>
+                    	<p id="returnmessage"></p>
+                      	<div class="row">
+                        	<div class="input-field col s12">
+                          		<input id="name" type="text" class="validate" required>
+                          		<label for="first_name">Nombre</label>
+                        	</div>
+                      </div>
+                      <div class="row">
+                      	<div class="input-field col s12">
+                          <input id="email" type="email" class="validate" required>
+                          <label for="email">Correo</label>
                         </div>
                       </div>
-                      <div class="col s6">
-                      <h4 class="header2">Encuentranos</h4>
-                         <style>
-					      #map {
-					        height: 400px;
-					        width: 100%;
-					       }
-					    </style>
-					    <div id="map"></div>
-					    <script>
-					      function initMap() {
-					        var uluru = {lat:-33.373449, lng:-70.518250};
-					        var map = new google.maps.Map(document.getElementById('map'), {
-					          zoom: 18,
-					          center: uluru
-					        });
-					        var contentString = '<p><b>Republica del Pollo</b>&nbsp;<img class="responsive-img" style="width:40px" src="img/logo.jpg"><br>Nva Las Condes 12280, Local 104, Las Condes</p>';
-					        var infowindow = new google.maps.InfoWindow({
-					            content: contentString
-					          });
-					        var marker = new google.maps.Marker({
-					            position: uluru,
-					            map: map,
-					            title: 'Uluru (Ayers Rock)'
-					          });
-					          marker.addListener('click', function() {
-					            infowindow.open(map, marker);
-					          });
-					      }
-					    </script>
-					    <script async defer
-					    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBRC9ggQZEiyJT2tQAsPAP4lIHxe-ft6Y&callback=initMap">
-					    </script>
-                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="message" class="materialize-textarea validate" required></textarea>
+                          <label for="message">Mensaje</label>
+                        </div>
+               			<div class="row">
+                        	<div class="input-field col s4 offset-s4">
+                            	<button class="btn cyan waves-effect waves-light right" id="submit" name="action">Submit
+                              	<i class="mdi-content-send right"></i>
+                            	</button>
+                          	</div>
+                        </div>
+                     </div>
+                   </div>
+                   <div class="col s6">
+                   		<h4 class="header2 center">Aquí Estamos</h4>
+			    		<div id="map" style="height: 400px; width: 100%"></div>
                     </div>
                   </div>
-                 </div>
+                </div>
+               </div>
 
-    </div>
   </div>
+</div>
 
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
+<!-- Banner --> 
+<div class="parallax-container valign-wrapper">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
       </div>
     </div>
-    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
   </div>
+  <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+</div>
 
-  <footer class="page-footer black">
-    <div class="container">
+<!-- Footer --> 
+<footer class="page-footer black">
+    <div class="">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Sobre Nosotros</h5>
@@ -226,33 +207,54 @@
     </div>
   </footer>
 
- <div class="fixed-action-btn bottomaction" style="bottom: 45px; right: 24px;">
- 	<a id="menu" onclick="$('.tap-target').tapTarget('open')" class="btn btn-floating btn-large cyan pulse"><i class="material-icons">shopping_cart</i></a>
- </div>
+<!-- Data shopping --> 
+<div class="tap-target cyan" data-activates="shoppingcart">
+  <div class="tap-target-content white-text">
+    <h5>I am here</h5>
+    <p class="white-text">Provide value and encourage return visits by introducing users to new features and functionality at contextually relevant moments.</p>
+  </div>
+</div>
 
- <div class="tap-target cyan" data-activates="menu">
- 	<div class="tap-target-content white-text">
-      <h5>I am here</h5>
-      <p class="white-text">Provide value and encourage return visits by introducing users to new features and functionality at contextually relevant moments.</p>
-    </div>
- </div>
+<!-- Button shopping --> 
+<div class="fixed-action-btn bottomaction" style="bottom: 45px; right: 24px;">
+	<a id="shoppingcart" class="btn btn-floating btn-large cyan pulse"><i class="material-icons">shopping_cart</i></a>
+</div>
 
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-  </body>
+</body>
 </html>
-<script>
 
+<!--  Scripts-->
+<script>
+function initMap() {
+  var uluru = {lat:-33.373449, lng:-70.518250};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: uluru
+  });
+  var contentString = '<p><b>República del Pollo</b>&nbsp;<br>Nva Las Condes 12280, Local 104, Las Condes</p>';
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+  var marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      title: 'República del pollo',
+      icon: 'img/polloicono.png'
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBRC9ggQZEiyJT2tQAsPAP4lIHxe-ft6Y&callback=initMap">
+</script>
+<script>
 $( document ).ready(function() {
 	
-/* 	$( ".bottomaction" ).click(function() {
-		$('.tapTarget').tapTarget('open');
-	}); */
+ 	$( ".bottomaction" ).click(function() {
+		$('.tap-target').tapTarget('open');
+	}); 
 
     $('.carousel.carousel-slider').carousel({fullWidth: true, duration: 1000});
 	  
@@ -286,38 +288,26 @@ $( document ).ready(function() {
 	
 });
 </script>
-<script>
-$(document).ready(function(){
-	
-	//Check to see if the window is top if not then display button
-	$(window).scroll(function(){
-		if ($(this).scrollTop() > 100) {
-			$('.scrollToTop').fadeIn();
-		} else {
-			$('.scrollToTop').fadeOut();
-		}
-	});
-	
-	//Click event to scroll to top
-	$('.scrollToTop').click(function(){
-		$('html, body').animate({scrollTop : 0},800);
-		return false;
-	});
-	
-});
-</script>
+
+<!-- Scroll -->
 <script>
 $("#botonmenu").click(function() {
     $('html,body').animate({
         scrollTop: $("#menu").offset().top},
         'slow');
 });
-$("#botoncontacto").click(function() {
+$("#botoncontacto, #botonencuentranos").click(function() {
+	event.preventDefault();
     $('html,body').animate({
-        scrollTop: $("#contactanos").offset().top},
-        'slow');
+        scrollTop: $("#contactanos").offset().top - 60}, 1000);
+});
+$("#botonquienessomos").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#aboutus").offset().top - 60}, 1000);
 });
 </script>
+
+<!-- Contact form -->
 <script>
 $(document).ready(function() {
 	$("#submit").click(function() {
@@ -327,7 +317,7 @@ $(document).ready(function() {
 		$("#returnmessage").empty(); // To empty previous error/success message.
 		// Checking for blank fields.
 		if (name == '' || email == '') {
-			alert("Please Fill Required Fields");
+			alert("Por favor, rellene todos los campos.");
 		} else {
 			// Returns successful data submission message when the entered information is stored in database.
 			$.post("contact_form.php", {
@@ -336,11 +326,23 @@ $(document).ready(function() {
 				message1: message,
 			}, function(data) {
 				$("#returnmessage").append(data); // Append returned message to message paragraph.
-				if (data == "Tu mensaje se ha recivido, Te contactaremos pronto.") {
+				if (data == "Tu mensaje se ha enviado, Te contactaremos pronto.") {
 					$("#form")[0].reset(); // To reset form fields on success.
 				}
 			});
 		}
 	});
+	});
+</script>
+
+<!--  Menu opacity-->
+<script>
+$(document).scroll(function() { 
+	   if($(window).scrollTop() === 0) {
+	   		$('.menuopacity').css('background', 'rgba(0, 0, 0, 1)');
+	   }
+	   else {
+		   $('.menuopacity').css('background', 'rgba(0, 0, 0, 0.8)');
+	   }
 	});
 </script>

@@ -20,11 +20,11 @@
 
 <!-- Menú --> 
 <div class="navbar-fixed">
-  <nav class="menuopacity" role="navigation" style="background: rgba(0, 0, 0, 1)">
+  <nav class="menuopacity" role="navigation" style="background: rgba(0, 0, 0, 1);">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo center"><img style="max-width:20%" class="responsive-img" id="logo" src="img/logo.png"/></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="white-text" id="botonmenu"href="#">Menú</a></li>
+      <img  style="max-height:100%" class="center responsive-img brand-logo" id="logo" src="img/logo.png"/>
+      <ul class="right hide-on-med-and-down" style=" float:right !important;">
+        <li><a class="white-text" id="botonmenu">Menú</a></li>
         <li><a class="white-text" id="botonquienessomos">¿Quiénes Somos?</a></li>
         <li><a class="white-text" id="botonencuentranos">Encuéntranos</a></li>
         <li><a class="white-text" id="botoncontacto">Contacto</a></li>
@@ -113,7 +113,7 @@
             <div class="col s12">
                 <div class="">
                   <div class="row  z-depth-5">
-                    <div class="col s6">
+                    <div class="col s6 contactanosspace">
                     	<h4 class="header2 center">Contáctanos</h4>
                     	<p id="returnmessage"></p>
                       	<div class="row">
@@ -167,11 +167,11 @@
 
 <!-- Footer --> 
 <footer class="page-footer black">
-    <div class="">
+    <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Nueva Las Condes 12280, local 104</h5>
-		  <img class="materialboxed" src="img/mapa.png" alt="Como llegar?"  data-caption="Nueva Las Condes 12280, local 104" style="width:60%">
+		  <img class="materialboxed responsive-img" src="img/mapa.png" alt="Como llegar?"  data-caption="Nueva Las Condes 12280, local 104" style="width:60%">
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
@@ -213,6 +213,17 @@
 	<a id="shoppingcart" class="btn btn-floating btn-large red pulse"><i class="material-icons">shopping_cart</i></a>
 </div>
 
+<!-- Modal Structure -->
+<div id="modalmenu" class="modal modal-fixed-footer" style="">
+  <div class="modal-content center">
+    <h4>Menú</h4>
+	<embed src="img/menú.pdf#page=1&view=Fit" style="width:100%; height:70vh;">
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+  </div>
+</div>
+
 </body>
 </html>
 
@@ -244,6 +255,15 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBRC9ggQZEiyJT2tQAsPAP4lI
 </script>
 <script>
 $( document ).ready(function() {
+	
+	$('.modal').modal({startingTop: '100%', // Starting top style attribute
+		      endingTop: '8%' // Ending top style attribute)
+		      })
+		      ;
+
+ 	$( "#botonmenu" ).click(function() {
+ 		$('#modalmenu').modal('open');
+	}); 
 	
  	$( ".bottomaction" ).click(function() {
 		$('.tap-target').tapTarget('open');
@@ -284,11 +304,7 @@ $( document ).ready(function() {
 
 <!-- Scroll -->
 <script>
-$("#botonmenu").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#menu").offset().top},
-        'slow');
-});
+$( document ).ready(function() {
 $("#botoncontacto, #botonencuentranos").click(function() {
 	event.preventDefault();
     $('html,body').animate({
@@ -298,12 +314,13 @@ $("#botonquienessomos").click(function() {
     $('html,body').animate({
         scrollTop: $("#aboutus").offset().top - 60}, 1000);
 });
+});
 </script>
 
 <!-- Contact form -->
 <script>
 $(document).ready(function() {
-	$("#submit").click(function() {
+	$("#submit").click(function(event) {
 		var name = $("#name").val();
 		var email = $("#email").val();
 		var message = $("#message").val();
@@ -318,12 +335,17 @@ $(document).ready(function() {
 				email1: email,
 				message1: message,
 			}, function(data) {
-				$("#returnmessage").append(data); // Append returned message to message paragraph.
-				if (data == "Tu mensaje se ha enviado, Te contactaremos pronto.") {
+				if (data == "0") {
 					$("#form")[0].reset(); // To reset form fields on success.
+					$("#returnmessage").html('Al parecer hubo un error, por favor intentalo denuevo.'); // Append returned message to message paragraph.
+				}
+				else{
+					$('.contactanosspace').html('<p>Gracias por tu mensaje, te contactaremos pronto!.');
 				}
 			});
 		}
+	$( this ).off( event );
+	
 	});
 	});
 </script>

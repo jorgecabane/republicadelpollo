@@ -14,7 +14,7 @@
   <style>
   html {
     font-family: Lobster;
-	font-size: 14px;
+	font-size: 15px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
@@ -35,18 +35,23 @@
     <div class="nav-wrapper container">
       <img  style="max-height:100%" class="center responsive-img brand-logo" id="logo" src="img/logo.png"/>
       <ul class="right hide-on-med-and-down" style=" float:right !important;">
-        <li><a class="white-text" id="botonmenu">Menú</a></li>
-        <li><a class="white-text" id="botonquienessomos">¿Quiénes Somos?</a></li>
-        <li><a class="white-text" id="botonencuentranos">Encuéntranos</a></li>
-        <li><a class="white-text" id="botoncontacto">Contacto</a></li>
+        <li><a class="white-text" id="botonmenu"><font size="3" face="sofia" color="white">Menú</font></a></li>
+        <li><a class="white-text" id="botonquienessomos"><font size="3" face="sofia" color="white">¿Quiénes Somos?</font></a></li>
+        <li><a class="white-text" id="botonencuentranos"><font size="3" face="sofia" color="white">Encuéntranos</font></a></li>
+        <li><a class="white-text" id="botoncontacto"><font size="3" face="sofia" color="white">Contacto</font></a></li>
       </ul>
       <ul class="left hide-on-med-and-down">
-        <li><a class="white-text" href="tel:+56978486568"><i class="left material-icons">phone</i>+56978486568</a></li>
-        <li><a class="white-text" href="mailto:contacto@republicadelpollo.cl"><i class="left material-icons">email</i>contacto@republicadelpollo.cl</a></li>
+        <li><font size="3" face="sofia" color="white"><a class="white-text" href="tel:+56978486568"><i class="left material-icons">phone</i>+56978486568</a></font></li>
+        <li><font size="3" face="sofia" color="white"><a class="white-text" href="mailto:contacto@republicadelpollo.cl"><i class="left material-icons">email</i>contacto@republicadelpollo.cl</a></font></li>
       </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+      <ul id="nav-mobile" class="side-nav grey darken-4">
+      <li><a class="white-text z-depth-1" id="botoninicio"><img  style="max-height:7vh" class="center responsive-img brand-logo" id="logo" src="img/logo.png"/></a></li>
+        <li><a href="http://republicadelpollo.cl/img/menu.jpg" class="black-text z-depth-1" id="botonmenu"><font size="3" face="sofia" color="white">Menú</font></a></li>
+        <li><a class="white-text z-depth-1" id="botonencuentranos"><font size="3" face="sofia" color="white">Encuéntranos</font></a></li>
+        <li><a class="white-text z-depth-1" id="botoncontacto"><font size="3" face="sofia" color="white">Contacto</font></a></li>
+        <li><a class="white-text z-depth-1" href="tel:+56978486568"><font size="3" face="sofia" color="white">cel: +56978486568</font></a></li>
+        <li><a class="white-text z-depth-1" href="mailto:contacto@republicadelpollo.cl"><font size="3" face="sofia" color="white">contacto@republicadelpollo.cl</font></a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse mobilebutton"><i class="material-icons">menu</i></a>
     </div>
@@ -59,7 +64,7 @@
 </div>
 
 <!-- Carousel -->        
-<div class="carousel carousel-slider center z-depth-1" data-indicators="true" style="height: 60vh !important;">
+<div id="carousel" class="carousel carousel-slider center z-depth-1" data-indicators="true" style="height: 60vh !important;">
     <div class="carousel-fixed-item center">
       <a class="btn waves-effect white-text z-depth-5" style="background: rgba(0, 0, 0, 0.8)">Haz tu pedido!</a>
     </div>
@@ -68,7 +73,7 @@
 	      <h2>First Panel</h2>
 	      <p class="white-text">This is your first panel</p>
     </div>
-    <div class="carousel-item green white-text" href="#three!">
+    <div class="carousel-item white white-text" href="#three!">
           <img class="responsive-img" style="height:60vh;" src="img/2 para llevar.jpg">
       <h2>Third Panel</h2>
       <p class="white-text">This is your third panel</p>
@@ -100,9 +105,9 @@
 </div>
 
 <!-- Historia--> 
-<div id="aboutus" class="container">
-  <div class="section center">
-	<img class="z-depth-5" src="img/quienes somos.jpg" width="85%">
+<div  class="container">
+  <div  class="section center historia">
+	<img id="historia" class="z-depth-5" src="img/quienes somos.jpg" style="min-height:300px; width:85%; ">
   </div>
 </div>
 
@@ -221,13 +226,11 @@
 </div>
 
 <!-- Modal Structure -->
-<div id="modalmenu" class="modal modal-fixed-footer" style="">
-  <div class="modal-content center">
+<div id="modalmenu" class="modal" style="width:70%; height:100%;">
+  <div class="modal-content center" style="width:100%; height:100%;">
     <h4>Menú</h4>
-	<embed src="img/menú.pdf#page=1&view=Fit" style="width:100%; height:80vh;">
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+	<embed src="img/menu.pdf#page=1&view=Fit" style="width:70%; height:80%;"><br>
+	<a href="#!" class="modal-action modal-close waves-effect waves-green btn">Cerrar</a>
   </div>
 </div>
 
@@ -318,8 +321,14 @@ $("#botoncontacto, #botonencuentranos").click(function() {
         scrollTop: $("#contactanos").offset().top - 60}, 1000);
 });
 $("#botonquienessomos").click(function() {
+	event.preventDefault();
     $('html,body').animate({
-        scrollTop: $("#aboutus").offset().top - 60}, 1000);
+        scrollTop: $("#historia").offset().top - 60}, 1000);
+});
+$("#botoninicio").click(function() {
+	event.preventDefault();
+    $('html,body').animate({
+        scrollTop: $("#carousel").offset().top - 60}, 1000);
 });
 });
 </script>
